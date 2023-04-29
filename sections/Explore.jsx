@@ -7,20 +7,6 @@ import { TypingText, TitleText, ExploreCard } from "../components";
 import { exploreWorlds } from '../constants';
 import styles from "../styles";
 
-async function getData() {
-  const res = await fetch('https://www.boredapi.com/api/activity');
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  // Recommendation: handle errors
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data');
-  }
-
-  return res.json();
-}
-
 const Explore = () => {
   const [active, setActive] = useState("world-2");
   
